@@ -1,0 +1,55 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+typedef struct {
+  DWORD dwSignature;        //SHD_SIGNATURE_WIN2000
+  DWORD dwHeaderSize;
+  WORD wStatus;
+  WORD wUnknown1;
+  DWORD dwJobID;
+  QWORD dwPriority;
+  QWORD offUserName;        //Offset of WideChar+0
+  QWORD offNotifyName;      //Offset of WideChar+0
+  QWORD offDocumentName;    //Offset of WideChar+0
+  QWORD offPort;            //Offset of WideChar+0
+  QWORD offPrinterName;     //Offset of WideChar+0
+  QWORD offDriverName;      //Offset of WideChar+0
+  QWORD offDevMode;         //Offset of DEVMODE
+        //Note that the dmCopies in this structure will hold
+        //the wrong value when the Microsoft Word multiple 
+        //copies bug occurs.
+        //In this case use the dmCopies from the SPL file
+  QWORD offPrintProcessor;  //Offset of WideChar+0
+  QWORD offDataFormat;      //Offset of WideChar+0
+  QWORD dwUnknown2;
+  WORD wYear;
+  WORD wMonth;
+  WORD wDayOfWeek;
+  WORD wDay;
+  WORD wHour;
+  WORD wMinute;
+  WORD wSecond;
+  WORD wMilliseconds;
+  DWORD dwStartTime;
+  DWORD dwUntilTime;
+  DWORD dwSPLSize;          
+  DWORD dwPageCount;
+  QWORD dwSizeSecurityInfo; //Size of SecurityInfo
+  QWORD offSecurityInfo;    //Offset of SECURITY_DESCRIPTOR
+  DWORD dwUnknown3;
+  DWORD dwUnknown4;
+  QWORD dwUnknown5;
+  QWORD offComputername;    //Offset of WideChar+0
+  QWORD dwUnknown7;
+  QWORD offSID;
+} _SHADOW_FILE_HEADER_SB;
+_SHADOW_FILE_HEADER_SB SHADOW_FILE_HEADER_SB;

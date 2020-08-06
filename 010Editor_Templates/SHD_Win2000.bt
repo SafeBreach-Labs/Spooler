@@ -1,0 +1,43 @@
+typedef struct {
+  DWORD dwSignature;        //SHD_SIGNATURE_WIN2000
+  DWORD dwHeaderSize;
+  WORD wStatus;
+  WORD wUnknown1;
+  DWORD dwJobID;
+  DWORD dwPriority;
+  DWORD offUserName;        //Offset of WideChar+0
+  DWORD offNotifyName;      //Offset of WideChar+0
+  DWORD offDocumentName;    //Offset of WideChar+0
+  DWORD offPort;            //Offset of WideChar+0
+  DWORD offPrinterName;     //Offset of WideChar+0
+  DWORD offDriverName;      //Offset of WideChar+0
+  DWORD offDevMode;         //Offset of DEVMODE
+        //Note that the dmCopies in this structure will hold
+        //the wrong value when the Microsoft Word multiple 
+        //copies bug occurs.
+        //In this case use the dmCopies from the SPL file
+  DWORD offPrintProcessor;  //Offset of WideChar+0
+  DWORD offDataFormat;      //Offset of WideChar+0
+  DWORD dwUnknown2;
+  WORD wYear;
+  WORD wMonth;
+  WORD wDayOfWeek;
+  WORD wDay;
+  WORD wHour;
+  WORD wMinute;
+  WORD wSecond;
+  WORD wMilliseconds;
+  DWORD dwStartTime;
+  DWORD dwUntilTime;
+  DWORD dwUnknown6;          
+  DWORD dwPageCount;
+  DWORD dwSizeSecurityInfo; //Size of SecurityInfo
+  DWORD offSecurityInfo;    //Offset of SECURITY_DESCRIPTOR
+  DWORD dwUnknown3;
+  DWORD dwUnknown4;
+  DWORD dwUnknown5;
+  DWORD offComputername;    //Offset of WideChar+0
+  DWORD dwSPLSize;          //Size of SPL File
+} _SHADOW_FILE_HEADER_WIN2000;
+
+_SHADOW_FILE_HEADER_WIN2000 SHADOW_FILE_HEADER_WIN2000;
